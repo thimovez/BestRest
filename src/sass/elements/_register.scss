@@ -1,0 +1,45 @@
+// Это стили первого экрана
+
+.register {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: url('../img/bgcelementLeft.svg') no-repeat,
+                url(../img/bgc_right_element.svg) no-repeat,
+                url(../img/bgc_top_element.svg) no-repeat,
+                url(../img/bg-cover.jpg) no-repeat (center/cover);
+    background-position: -3% 30%, 102% 95%, 75% -7%, center;
+    background-size: 10%, 10%, 8%, 100%; 
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__head {
+        display: inline-block;
+        margin-top: 40px;
+        color: #fff;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 62px;
+        line-height: 73px;
+        text-align: center;
+        span {
+            font-weight: 500;
+            font-size: 62px;
+            line-height: 73px;
+            color: $main-color;
+        }
+    }
+    &__checkbox {
+        margin-left: 30px;
+     }
+}
+
+
+
+
+
+

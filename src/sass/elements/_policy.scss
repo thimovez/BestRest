@@ -1,0 +1,22 @@
+.policy {
+    width: 224px;
+    height: 18px;
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: #E0E0E0;
+    margin-left: 11px;
+    &__green {
+        width: 224px;
+        height: 18px;
+        font-family: Rubik;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+        color: #6CEEC7;
+        text-decoration: underline;
+    }
+}

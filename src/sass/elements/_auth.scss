@@ -1,0 +1,76 @@
+//Стилизация формы регистрации
+
+
+.auth {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url('../img/bgc_top_element.svg') no-repeat,
+                url(../img/bgcelementLeft.svg) no-repeat,
+                url(../img/bgc_right_element.svg) no-repeat,
+                url(../img/bg-cover2.jpg) no-repeat (center/cover);
+    background-position: -3% 30%,103% 11%,76% 103%,center;
+    background-size: 10%, 10%, 8%, 100%; 
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 55px;
+        width: 630px;
+    }
+    &__icon {
+        position: absolute;
+        left: 16px;
+        top: 16px;
+    }
+    &__policy {
+        display: flex;
+        width: 300px;
+        margin-top: 20px;
+        height: 56px;
+        align-items: center;
+        margin-left: 30px;
+    }
+}
+
+
+
+.auth__test {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 19px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    &:focus,
+    &:valid {
+        outline: none;
+        padding-top: 15px;
+    }
+    &:focus+label,
+    &:valid+label {
+        left: 50px;
+        top: 11px;
+        font-size: 11px;
+        color: $main-color;
+    }
+    
+}
+
+.auth__label {
+    color: #fff;
+    font-size: 18px;
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 15px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
