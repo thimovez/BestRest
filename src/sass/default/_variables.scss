@@ -1,1 +1,12 @@
 $main-color: #6CEEC7;
+$secondary-color: #E0E0E0;
+$white-color: #ffffff;
+$error-color: #DA5050;
+
+
+@mixin style-error {
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 500;
+    color: $error-color;
+}

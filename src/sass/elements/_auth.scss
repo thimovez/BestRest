@@ -30,7 +30,7 @@
     &__policy {
         display: flex;
         width: 300px;
-        margin-top: 20px;
+        margin-top: 30px;
         height: 56px;
         align-items: center;
         margin-left: 30px;
@@ -38,6 +38,34 @@
             width: 10px;
             height: 10px;
         }
+        input[type=checkbox] { 
+            display: none;
+        }
+        .checkbox__policy {  
+            &::before {
+                content: "\00A0";
+                display: inline-block;
+                box-sizing: border-box;
+                width: 20px;
+                height: 20px;
+                background-color: white;
+                border-radius: 2px;
+                margin-right: 6px;
+                vertical-align: baseline;
+                text-align: center;
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 16px;
+                font-weight: bold;
+                color: #808080;
+                cursor: pointer;
+            }
+        }
+        input[type=checkbox] { 
+            &:focus + .checkbox__policy {
+                background-color: red;
+            }   
+        };
     }
 }
 
@@ -95,8 +123,11 @@ input {
 }
 
 label {
-    color: #fff;
-    font-size: 18px;
+    color: #E0E0E0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 23px;
     position: absolute;
     pointer-events: none;
     left: 50px;
@@ -109,10 +140,13 @@ label {
 input {
     &:focus ~ label,
     &:valid ~ label {
-        top: 8px;
+        top: 12px;
         left: 50px;
-        font-size: 14px;
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 300;
         color: $main-color;
+        transition: .3s;
     }
 }
   

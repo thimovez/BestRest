@@ -39,29 +39,35 @@
                         <img class="auth__icon" src="./img/u_users-alt02.svg" alt="icon">
                         <span class="msg__secname"></span>
                     </div>
-                    <div class="auth__block auth__con">
-                        <input name="country" class="auth__input auth__coutry" type="text" required>
-                        <label>Country</label>
-                        <img class="auth__icon" src="./img/u_phone-alt04.svg" alt="icon">
+                    <div class="auth__block">
+                        <img class="select__icon" src="./img/u_envelope07.svg" alt="icon">
+                        <select class="auth__select" name="country">
+                            <option class="green" selected="" value="Default">Country</option>
+                            <option class="select__coutrty" value="AF">Australia</option>
+                            <option class="select__coutrty" value="AL">Canada</option>
+                            <option class="select__coutrty" value="DZ">India</option>
+                            <option class="select__coutrty" value="AS">Russia</option>
+                            <option class="select__coutrty" value="AD">USA</option>
+                        </select>
                         <span class="msg__country"></span>
                     </div>
                     <div class="auth__block">
-                        <input class="auth__input" type="text" required>
+                        <input class="auth__input auth__phone" type="text" required>
                         <label>Phone</label>
                         <img class="auth__icon" src="./img/u_padlock05.svg" alt="icon">
-                        <span class="msg"></span>
+                        <span class="msg__phone"></span>
                     </div>
                     <div class="auth__block">
-                        <input class="auth__input" type="text" required>
+                        <input class="auth__input password" type="password" required>
                         <label>Password</label>
                         <img class="auth__icon" src="./img/u_padlock06.svg" alt="icon">
-                        <span class="msg"></span>
+                        <span class="msg__password"></span>
                     </div>
                     <div class="auth__block">
-                        <input class="auth__input" type="text" required>
+                        <input class="auth__input confirm-passw" type="password" required>
                         <label>Confirm password</label>
                         <img class="auth__icon" src="./img/u_envelope07.svg" alt="icon">
-                        <span class="msg"></span>
+                        <span class="msg__confirm-pasw"></span>
                     </div>
                     <div class="auth__block">
                         <input class="auth__input" type="text">
@@ -71,28 +77,17 @@
                     </div>
                     <div class="auth__policy">
                         <input class="auth__checkbox" type="checkbox">
-                        <div class="policy">I agree to the <span class="policy__green">Terms & Conditions</span></div>
+                        <span class="checkbox__policy"></span>
+                        <div class="policy">I agree to the <a href="#" class="policy__green">Terms & Conditions</a>
+                        </div>
                     </div>
                     <button class="button"><a id="goToMe">Sing Up</a></button>
-
                 </form>
             </div>
         </div>
     </div>
 
-    <li>
-        <label for="country">Country:</label>
-    </li>
-    <li>
-        <select name="country">
-            <option selected="" value="Default">Country</option>
-            <option value="AF">Australia</option>
-            <option value="AL">Canada</option>
-            <option value="DZ">India</option>
-            <option value="AS">Russia</option>
-            <option value="AD">USA</option>
-        </select>
-    </li>
+
 
     <!-- <footer>
         <div class="container">

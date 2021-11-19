@@ -5,38 +5,59 @@
         width: 300px;
         height: 56px;
         background: rgba(0, 0, 0, 0.2);
-        border: 1px solid #FFFFFF;
+        border: 1px solid $white-color;
         box-sizing: border-box;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         border-radius: 5px;
         font-weight: 300;
         font-size: 19px;
-        color: #E0E0E0;
-        padding: 7px 0 7px 50px;
+        color: $secondary-color;
+        padding: 10px 0 7px 50px;
         background-position: 5%;
         outline: 0;
         outline-offset: 0;
         box-shadow: none;
         position: relative;
-        &:focus {
+        &:focus:valid {
             outline: none;
+            padding: 20px 0 7px 50px;
         }
         &::placeholder {
             color: #fff;
         }
         &:focus::placeholder {
             opacity: 0;
+            
         }
-        &:focus+span {
-            display: block;
-            position: absolute;
-            top: 10px;
-            font-size: 11px;
-            line-height: 13px;
-            font-weight: 300;
-            color: $main-color;
-            transition: .3s;
-        }
+        // &:focus+span {
+        //     display: block;
+        //     position: absolute;
+        //     top: 10px;
+        //     font-size: 11px;
+        //     line-height: 13px;
+        //     font-weight: 300;
+        //     color: $main-color;
+        //     transition: .3s;
+            
+        // }
+    }
+    &__select {
+        width: 300px;
+        height: 56px;
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid $white-color;
+        box-sizing: border-box;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        font-weight: 300;
+        font-size: 19px;
+        color: $secondary-color;
+        padding: 7px 0 7px 50px;
+        background-position: 5%;
+        outline: 0;
+        outline-offset: 0;
+        box-shadow: none;
+        position: relative;
     }
     &__block {
         margin-top: 30px;
@@ -58,34 +79,70 @@
 }
 
 .msg {
-    font-weight: 500;
-    font-size: 10px;
-    line-height: 12px;
-    text-align: right;
-    color: #DA5050;
+    @include style-error;
     position: absolute;
     top: 62px;
     left: 95px;
-    &__country {
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 12px;
-        text-align: right;
-        color: #DA5050;
-        position: absolute;
-        top: 62px;
-        left: 77%;
-    }
     &__secname {
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 12px;
-        text-align: right;
-        color: #DA5050;
+        @include style-error;
         position: absolute;
         top: 62px;
         left: 95px;
     }
+    &__country {
+        @include style-error;
+        position: absolute;
+        top: 62px;
+        left: 233px;
+    }
+    &__phone {
+        @include style-error;
+        position: absolute;
+        top: 62px;
+        left: 233px;
+    }
+    &__password {
+        @include style-error;
+        position: absolute;
+        top: 62px;
+        left: 35px;
+    }
+    &__confirm-pasw {
+        @include style-error;
+        position: absolute;
+        top: 62px;
+        left: 35px;
+    }
+}
+    
+
+
+select {
+    appearance: none;
+    option {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+        background-color: $white-color;
+        color: #5E5E5E;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &:focus {
+        font-size: 11px;
+        line-height: 13px;
+        font-weight: 300;
+        color: $main-color;
+        transition: .3s;
+    }
+}
+
+
+.select__icon {
+    position: absolute;
+    top: 17px;
+    left: 16px;
 }
 
 
