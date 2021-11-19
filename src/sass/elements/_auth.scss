@@ -34,43 +34,87 @@
         height: 56px;
         align-items: center;
         margin-left: 30px;
+        input {
+            width: 10px;
+            height: 10px;
+        }
     }
 }
 
 
 
-.auth__test {
-    font-family: Rubik;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 19px;
+// .auth__test {
+//     font-family: Rubik;
+//     font-style: normal;
+//     font-weight: 300;
+//     font-size: 19px;
+//     display: block;
+//     width: 300px;
+//     border: none;
+//     border-bottom: 1px solid #ccc;
+//     &:focus,
+//     &:valid {
+//         outline: none;
+//         padding-top: 15px;
+//     }
+//     &:focus+label,
+//     &:valid+label {
+//         left: 50px;
+//         top: 11px;
+//         font-size: 11px;
+//         color: $main-color;
+//     }
+    
+// }
+
+// .auth__label {
+//     color: #fff;
+//     font-size: 18px;
+//     position: absolute;
+//     pointer-events: none;
+//     left: 10px;
+//     top: 15px;
+//     transition: 0.2s ease all;
+//     -moz-transition: 0.2s ease all;
+//     -webkit-transition: 0.2s ease all;
+// }
+
+//тут я тестирую стили так как появились какие-то траблы
+
+
+input {
+    font-size: 16px;
+    padding: 10px;
     display: block;
     width: 300px;
     border: none;
     border-bottom: 1px solid #ccc;
-    &:focus,
-    &:valid {
+    &:focus {
         outline: none;
-        padding-top: 15px;
     }
-    &:focus+label,
-    &:valid+label {
-        left: 50px;
-        top: 11px;
-        font-size: 11px;
-        color: $main-color;
-    }
-    
 }
 
-.auth__label {
+label {
     color: #fff;
     font-size: 18px;
     position: absolute;
     pointer-events: none;
-    left: 10px;
+    left: 50px;
     top: 15px;
     transition: 0.2s ease all;
     -moz-transition: 0.2s ease all;
     -webkit-transition: 0.2s ease all;
 }
+
+input {
+    &:focus ~ label,
+    &:valid ~ label {
+        top: 8px;
+        left: 50px;
+        font-size: 14px;
+        color: $main-color;
+    }
+}
+  
+  
+  

@@ -1,33 +1,3 @@
-const spanHide = document.querySelector('.hide'),
-    inputClick = document.querySelector('.auth__input');
-
-function hideInput() {
-    inputClick.onclick('focus', () => {
-        spanHide.style.display = 'block';
-        console.log('Error')
-    });
-}
-hideInput();
-
-// console.log(inputCount)
-// function allFunc() {
-
-//     if (inputCount === '' || 0) {
-//         spanHide.hidden = true;
-//     } else {
-//         spanHide.hidden = false;
-//     }
-// }
-// function hideInput() {
-//     document.onclick('click', () => {
-//         spanHide.style.display = '';
-//     });
-// }
-
-// hideInput();
-
-// allFunc();
-
 // Плавный скрол при нажатии на кнопку Registration
 $('.flowing-scroll').on('click', function () {
     var el = $(this);
@@ -40,3 +10,79 @@ $('.flowing-scroll').on('click', function () {
     }
     return false;
 });
+
+const inputName = document.querySelector('.auth__name'),
+    messageName = document.querySelector('.msg'),
+    inputSecName = document.querySelector('.auth__second-name'),
+    messageSecName = document.querySelector('.msg__secname'),
+    inputCountry = document.querySelector('.auth__coutry'),
+    messageCountry = document.querySelector('.msg__country');
+
+
+//Проверка на к-во символов в инпуте First Name
+function checkInputName() {
+    inputName.addEventListener('keyup', function (e) {
+        let length = this.value.length;
+        // вывести текст под инпутом Name
+        let timerName = setInterval(() => {
+            (length < 3) ?
+                messageName.textContent = 'The name must be more than 2 characters'
+                :
+                messageName.textContent = '';
+        }, 1000);
+        // остановить вывод текста через 4 секунд
+        return setTimeout(() => { clearInterval(timerName); messageValue.textContent = ''; }, 4000);
+    });
+}
+//Проверка на к-во символов в инпуте Second Name
+function checkInputSecondName() {
+    inputSecName.addEventListener('keyup', function (e) {
+        let length = this.value.length;
+        // вывести текст под инпутом SecondName
+        let timerSecName = setInterval(() => {
+            (length < 3) ?
+                messageSecName.textContent = 'The name must be more than 2 characters'
+                :
+                messageSecName.textContent = '';
+        }, 1000);
+        // остановить вывод текста через 4 секунд
+        return setTimeout(() => { clearInterval(timerSecName); messageSecName.textContent = ''; }, 4000);
+    });
+}
+
+
+// inputCountry.addEventListener('keyup', function (e) {
+//     let length = this.value.length;
+//     // вывести текст под инпутом Country
+//     console.log(length);
+//     let timerCountry = setInterval(() => {
+//         console.log(length);
+//         (length < 1) ?
+//             // messageCountry.textContent = 'Fill in the field'
+//             console.log('working')
+//             :
+//             messageCountry.textContent = '';
+//     }, 1000);
+//     // остановить вывод текста через 4 секунд
+//     return setTimeout(() => { clearInterval(timerCountry); messageCountry.textContent = ''; }, 4000);
+// });
+
+// let a = document.forms["myForm"]["country"].value;
+// function validate() {
+
+//     let timerCountry = setInterval(() => {
+//         if (a == "" || 0) {
+//             messageCountry.textContent = 'Fill in the field'
+//         } else if (a == " ") {
+//             messageCountry.textContent = '';
+//         }
+//         return false;
+//     }, 1000);
+// }
+
+// validate();
+
+
+// Вызов основных функций 
+checkInputName();
+checkInputSecondName()
