@@ -1,6 +1,4 @@
 //Стилизация формы регистрации
-
-
 .auth {
     height: 100vh;
     display: flex;
@@ -15,6 +13,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        min-height: 100%;
     }
     &__form {
         display: flex;
@@ -34,81 +34,13 @@
         height: 56px;
         align-items: center;
         margin-left: 30px;
+        position: relative;
         input {
             width: 10px;
             height: 10px;
         }
-        input[type=checkbox] { 
-            display: none;
-        }
-        .checkbox__policy {  
-            &::before {
-                content: "\00A0";
-                display: inline-block;
-                box-sizing: border-box;
-                width: 20px;
-                height: 20px;
-                background-color: white;
-                border-radius: 2px;
-                margin-right: 6px;
-                vertical-align: baseline;
-                text-align: center;
-                font-family: Arial, sans-serif;
-                font-size: 16px;
-                line-height: 16px;
-                font-weight: bold;
-                color: #808080;
-                cursor: pointer;
-            }
-        }
-        input[type=checkbox] { 
-            &:focus + .checkbox__policy {
-                background-color: red;
-            }   
-        };
     }
 }
-
-
-
-// .auth__test {
-//     font-family: Rubik;
-//     font-style: normal;
-//     font-weight: 300;
-//     font-size: 19px;
-//     display: block;
-//     width: 300px;
-//     border: none;
-//     border-bottom: 1px solid #ccc;
-//     &:focus,
-//     &:valid {
-//         outline: none;
-//         padding-top: 15px;
-//     }
-//     &:focus+label,
-//     &:valid+label {
-//         left: 50px;
-//         top: 11px;
-//         font-size: 11px;
-//         color: $main-color;
-//     }
-    
-// }
-
-// .auth__label {
-//     color: #fff;
-//     font-size: 18px;
-//     position: absolute;
-//     pointer-events: none;
-//     left: 10px;
-//     top: 15px;
-//     transition: 0.2s ease all;
-//     -moz-transition: 0.2s ease all;
-//     -webkit-transition: 0.2s ease all;
-// }
-
-//тут я тестирую стили так как появились какие-то траблы
-
 
 input {
     font-size: 16px;
@@ -149,6 +81,5 @@ input {
         transition: .3s;
     }
 }
-  
-  
+
   

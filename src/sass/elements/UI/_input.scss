@@ -1,5 +1,4 @@
 //Тут лежит анимация при клике на инпут
-
 .auth {
     &__input {
         width: 300px;
@@ -18,28 +17,12 @@
         outline-offset: 0;
         box-shadow: none;
         position: relative;
-        &:focus:valid {
+        caret-color: #fff;
+        &:focus,
+        &:valid {
             outline: none;
             padding: 20px 0 7px 50px;
         }
-        &::placeholder {
-            color: #fff;
-        }
-        &:focus::placeholder {
-            opacity: 0;
-            
-        }
-        // &:focus+span {
-        //     display: block;
-        //     position: absolute;
-        //     top: 10px;
-        //     font-size: 11px;
-        //     line-height: 13px;
-        //     font-weight: 300;
-        //     color: $main-color;
-        //     transition: .3s;
-            
-        // }
     }
     &__select {
         width: 300px;
@@ -66,57 +49,63 @@
         &:nth-child(odd) {
             margin-left: 0;
         }
-        // span {
-        //     display: none;
-        //     top: 18px;
-        //     position: absolute;
-        //     left: 50px;
-        //     font-size: 18px;
-        //     color: #e0e0e0;
-        //     font-weight: 300;
-        // }
     }
 }
 
+
+//Стилизация сообщения при неверном вводе инпута
 .msg {
     @include style-error;
     position: absolute;
     top: 62px;
     left: 95px;
+    display: none;
     &__secname {
         @include style-error;
         position: absolute;
         top: 62px;
         left: 95px;
+        display: none;
     }
     &__country {
         @include style-error;
         position: absolute;
         top: 62px;
         left: 233px;
+        display: none;
     }
     &__phone {
         @include style-error;
         position: absolute;
         top: 62px;
         left: 233px;
+        display: none;
     }
     &__password {
         @include style-error;
         position: absolute;
         top: 62px;
         left: 35px;
+        display: none
     }
     &__confirm-pasw {
         @include style-error;
         position: absolute;
         top: 62px;
         left: 35px;
+        display: none;
+    }
+    &__email {
+        @include style-error;
+        position: absolute;
+        top: 62px;
+        left: 35px;
+        display: none;
     }
 }
     
 
-
+//Стилизация блока с выбором страны
 select {
     appearance: none;
     option {
@@ -125,19 +114,8 @@ select {
         line-height: 18px;
         background-color: $white-color;
         color: #5E5E5E;
-        position: absolute;
-        left: 0;
-        top: 0;
-    }
-    &:focus {
-        font-size: 11px;
-        line-height: 13px;
-        font-weight: 300;
-        color: $main-color;
-        transition: .3s;
     }
 }
-
 
 .select__icon {
     position: absolute;
@@ -145,4 +123,9 @@ select {
     left: 16px;
 }
 
+.country__position {
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
 

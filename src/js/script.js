@@ -10,16 +10,9 @@ $('.flowing-scroll').on('click', function () {
     }
     return false;
 });
-//Паралакс при скролле
-let thesholdSets = [];
-for (let i = 0; i <= 1.0; i += 0.005) {
-    thesholdSets.push(i);
-}
-const callback = function (entries, observer) {
-    const scrollTopProcent = window.pageYOffset / parallax.offsetHeight * 100;
-    setParallaxItemStyle(scrollTopProcent);
-}
-//Вообще валидацию лучше делать на бэкенде
+//WOW js
+new WOW().init();
+//Переменные для валидации
 const inputName = document.querySelector('.auth__name'),
     messageName = document.querySelector('.msg'),
     inputSecName = document.querySelector('.auth__second-name'),
@@ -31,95 +24,174 @@ const inputName = document.querySelector('.auth__name'),
     inputPassword = document.querySelector('.password'),
     messagePassword = document.querySelector('.msg__password'),
     inputConfirmPassword = document.querySelector('.confirm-passw'),
-    messageConfirmPassword = document.querySelector('.confirm-passw');
+    messageConfirmPassword = document.querySelector('.msg__confirm-pasw'),
+    inputEmail = document.querySelector('.email'),
+    messageEmail = document.querySelector('.msg__email'),
+    onSubmitForm = document.querySelector('.onsubmit');
 
 
 //Проверка на к-во символов в инпуте First Name
-function checkInputName() {
+function verifyInputName() {
     inputName.addEventListener('keyup', function (e) {
         let length = this.value.length;
-        // вывести текст под инпутом Name
+        // Вывести текст под инпутом Name
         let timerName = setInterval(() => {
-            (length <= 2) ?
-                messageName.textContent = 'The name must be more than 2 characters'
-                :
-                messageSecName.style.display = 'none';
-        }, 1000);
-        // остановить вывод текста через 4 секунд
-        setTimeout(() => { clearInterval(timerName); messageName.textContent = ''; }, 4000);
+            if (length <= 2) {
+                messageName.style.display = 'block'
+                if (!length) {
+                    messageName.style.display = 'none';
+                }
+            } else {
+                messageName.style.display = 'none';
+            }
+            setTimeout(() => {
+                messageName.style.display = 'none';
+            }, 4000);
+        });
+        setTimeout(() => { clearInterval(timerName); });
     });
 }
 //Проверка на к-во символов в инпуте Second Name
-function checkInputSecondName() {
+function verifyInputSecondName() {
     inputSecName.addEventListener('keyup', function (e) {
         let length = this.value.length;
         // вывести текст под инпутом SecondName
         let timerSecName = setInterval(() => {
-            (length <= 2) ?
-                messageSecName.textContent = 'The name must be more than 2 characters'
-                :
+            if (length <= 2) {
+                messageSecName.style.display = 'block';
+                if (!length) {
+                    messageSecName.style.display = 'none';
+                }
+            } else {
                 messageSecName.style.display = 'none';
-        }, 1000);
-        // остановить вывод текста через 4 секунд
-        setTimeout(() => { clearInterval(timerSecName); messageSecName.textContent = ''; }, 4000);
+            }
+            setTimeout(() => {
+                messageSecName.style.display = 'none';
+            }, 4000);
+        });
+        // остановить вывод текста
+        setTimeout(() => { clearInterval(timerSecName); });
     });
 }
 //Проверка: Обязательно нужно заполнить поле Country
 function countrySelect(country) {
     listCountry.addEventListener("click", () => {
-        if (country.value === "Default") {
-            messageCountry.textContent = 'Fill in the field';
-        } else {
-            messageCountry.style.display = 'none';
-        }
+        timerCountry = setInterval(() => {
+            if (country.value === "Default") {
+                messageCountry.style.display = 'block';
+                if (!country.value) {
+                    messageCountry.style.display = 'block';
+                }
+            } else {
+                messageCountry.style.display = 'none';
+            }
+            setTimeout(() => {
+                messageCountry.style.display = 'none';
+            }, 4000);
+        });
+        //остановить вывод ошибки
+        setTimeout(() => { clearInterval(timerCountry); });
     });
 }
 //Проверка: Обязательно нужно заполнить поле Phone
-function phoneSelect() {
+function phoneInput() {
     inputPhone.addEventListener('keyup', function (e) {
         let length = this.value.length;
-        console.log(length);
+        let onlyNum = /^\d+$/;
         // вывести текст под инпутом Phone
         let timerPhone = setInterval(() => {
-            (length <= 1) ?
-                messagePhone.textContent = 'Fill in the field'
-                :
+            if (length <= 3) {
+                messagePhone.style.display = 'block';
+                if (!onlyNum) {
+                    messagePhone.style.display = 'block';
+                }
+            } else {
                 messagePhone.style.display = 'none';
+            }
         }, 1000);
-        // остановить вывод текста через 2 секунд
-        setTimeout(() => { clearInterval(timerPhone); messagePhone.textContent = ''; }, 4000);
+        // остановить вывод текста
+        setTimeout(() => { clearInterval(timerPhone); messagePhone.style.display = 'none'; }, 4000);
     });
 }
-///Проверка паролей
-function allLetter(uname) {
-    let strongPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%/()=¿?*+-])(?=(?:([\w\d])\1?(?!\1\1)))/;
-    let timerPassword = inputPassword.addEventListener('keyup', () => {
-        if (uname.value.match(strongPass)) {
-            messagePassword.style.display = 'none';
-        } else {
-            messagePassword.textContent = 'Password must have 1 letter, 1 number and one symbol';
-        }
-    }, 1000);
-    return setTimeout(() => { clearInterval(timerPassword); messagePassword.style.display = 'none'; }, 4000);
+//Проверка основного пароля
+function verifyPassword() {
+    inputPassword.addEventListener('keyup', function (e) {
+        let keyLetter = e.target.value;
+        // console.log(keyLetter);
+        let strongPass = new RegExp("[A-Za-z][^0-9][0-9]");
+        // console.log(strongPass.test(keyLetter));
+        let timerPassword = setInterval(() => {
+            if (strongPass.test(keyLetter) === false) {
+                messagePassword.style.display = 'block'
+            } else {
+                messagePassword.style.display = 'none'
+            }
+            setTimeout(() => {
+                messagePassword.style.display = 'none';
+            }, 4000);
+        });
+        setTimeout(() => { clearInterval(timerPassword); });
+    });
 }
-//Сравнение пароля
-// function passwordСomparison() {
-//     let timerConfirmPass = inputConfirmPassword.addEventListener('keyup', () => {
-//         if (inputPassword === inputConfirmPassword) {
-//             messageConfirmPassword.style.display = 'none';
-//             console.log(отработало);
-//         } else {
-//             messageConfirmPassword.textContent = 'Password does not match';
-//         }
-//     }, 1000);
-//     return setTimeout(() => { clearInterval(timerConfirmPass); messagePassword.style.display = 'none'; }, 4000);
-// }
+//Сравнение паролей
+function passwordСomparison() {
+    inputConfirmPassword.addEventListener('keyup', function (e) {
+        let keyLetter = e.target.value;
+        let checkpass = inputPassword.value;
+        console.log(checkpass);
+        timerConfPass = setInterval(() => {
+            if (keyLetter === inputPassword) {
+                // messageConfirmPassword.style.display = 'none';
+                console.log('ok!!')
+            } else {
+                messageConfirmPassword.style.display = 'block';
+            }
+            setTimeout(() => {
+                messageConfirmPassword.style.display = 'none';
+            }, 4000);
+        });
+        setTimeout(() => { clearInterval(timerConfPass); });
+    });
 
+}
+//Проверка email
+function verifyEmail() {
+    inputEmail.addEventListener('keyup', function (e) {
+        let keyLetter = e.target.value;
+        console.log(keyLetter);
+        let correctEmail = new RegExp(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/);
+        console.log(correctEmail.test(keyLetter));
+        let timerEmail = setInterval(() => {
+            if (correctEmail.test(keyLetter) === false) {
+                messageEmail.style.display = 'block'
+            } else {
+                messageEmail.style.display = 'none'
+            }
+            setTimeout(() => {
+                messageEmail.style.display = 'none';
+            }, 4000);
+        });
+        setTimeout(() => { clearInterval(timerEmail); });
+    });
+}
+// Проверка инпутов при нажатии на Sing Up
+function formValidation() {
+    onSubmitForm.addEventListener('click', () => {
+        if (verifyInputName() === true) {
+            messageName.style.display = 'none';
+        } else {
+            messageName.style.display = 'block';
+        }
+        return false;
+    });
+}
 
 // Вызов функий на валидацию
-checkInputName();
-checkInputSecondName();
+verifyInputName();
+verifyInputSecondName();
 countrySelect(listCountry);
-phoneSelect();
-allLetter(inputPassword);
-// passwordСomparison();
+phoneInput();
+verifyPassword();
+passwordСomparison();
+verifyEmail();
+formValidation();

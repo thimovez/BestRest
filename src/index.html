@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BestRest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -25,64 +26,86 @@
 
     <div class="auth">
         <div class="container">
-            <div class="auth__wrapper">
-                <form class="auth__form" name="myForm" onsubmit="return validate()">
-                    <div class="auth__block">
+            <div class="auth__wrapper ">
+                <form onsubmit="return false" novalidate class="auth__form" name="myForm" onsubmit="return validate()">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1s">
                         <input class="auth__input auth__name" type="text" required>
                         <label>Firsr Name</label>
-                        <img class="auth__icon" src="./img/u_users-alt02.svg" alt="icon">
-                        <span class="msg"></span>
+                        <img class="auth__icon" src="./img/icon/u_user01.svg" alt="icon">
+                        <span class="msg">The name must be more than 2 characters</span>
                     </div>
-                    <div class="auth__block">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1s">
                         <input class="auth__input auth__second-name" type="text" required>
                         <label>Second Name</label>
-                        <img class="auth__icon" src="./img/u_users-alt02.svg" alt="icon">
-                        <span class="msg__secname"></span>
+                        <img class="auth__icon" src="./img/icon/u_users-alt02.svg" alt="icon">
+                        <span class="msg__secname">The name must be more than 2 characters</span>
                     </div>
-                    <div class="auth__block">
-                        <img class="select__icon" src="./img/u_envelope07.svg" alt="icon">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1s">
+                        <img class="select__icon" src="./img/icon/u_map-marker-alt03.svg" alt="icon">
                         <select class="auth__select" name="country">
-                            <option class="green" selected="" value="Default">Country</option>
-                            <option class="select__coutrty" value="AF">Australia</option>
-                            <option class="select__coutrty" value="AL">Canada</option>
-                            <option class="select__coutrty" value="DZ">India</option>
-                            <option class="select__coutrty" value="AS">Russia</option>
-                            <option class="select__coutrty" value="AD">USA</option>
+                            <div class="country__position">
+                                <option class="green" selected="" value="Default">Country</option>
+                            </div>
+                            <li class="country__position">
+                                <option class="select__coutrty" value="AF">Australia</option>
+                            </li>
+                            <li>
+                                <option class="select__coutrty" value="AL">Canada</option>
+                            </li>
+                            <li>
+                                <option class="select__coutrty" value="DZ">India</option>
+                            </li>
+                            <li>
+                                <option class="select__coutrty" value="AS">Russia</option>
+                            </li>
+                            <li>
+                                <option class="select__coutrty" value="AD">USA</option>
+                            </li>
                         </select>
-                        <span class="msg__country"></span>
+                        <span class="msg__country">Fill in the field</span>
                     </div>
-                    <div class="auth__block">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1.5s">
                         <input class="auth__input auth__phone" type="text" required>
                         <label>Phone</label>
-                        <img class="auth__icon" src="./img/u_padlock05.svg" alt="icon">
-                        <span class="msg__phone"></span>
+                        <img class="auth__icon" src="./img/icon/u_phone-alt04.svg" alt="icon">
+                        <span class="msg__phone">Fill in the field</span>
                     </div>
-                    <div class="auth__block">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1.8s">
                         <input class="auth__input password" type="password" required>
                         <label>Password</label>
-                        <img class="auth__icon" src="./img/u_padlock06.svg" alt="icon">
-                        <span class="msg__password"></span>
+                        <img class="auth__icon" src="./img/icon/u_padlock05.svg" alt="icon">
+                        <span class="msg__password">Password must have 1 letter, 1 number and one symbol</span>
                     </div>
-                    <div class="auth__block">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="1.8s">
                         <input class="auth__input confirm-passw" type="password" required>
                         <label>Confirm password</label>
-                        <img class="auth__icon" src="./img/u_envelope07.svg" alt="icon">
-                        <span class="msg__confirm-pasw"></span>
+                        <img class="auth__icon" src="./img/icon/u_padlock06.svg" alt="icon">
+                        <span class="msg__confirm-pasw">Password does not match</span>
                     </div>
-                    <div class="auth__block">
-                        <input class="auth__input" type="text">
+                    <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="2s">
+                        <input class="auth__input email" type="email" required>
                         <label>Email</label>
-                        <img class="auth__icon" src="" alt="icon">
-                        <span class="msg"></span>
+                        <img class="auth__icon" src="./img/icon/u_envelope07.svg" alt="icon">
+                        <span class="msg__email">Email is not correct</span>
                     </div>
-                    <div class="auth__policy">
-                        <input class="auth__checkbox" type="checkbox">
-                        <span class="checkbox__policy"></span>
+                    <div class="auth__policy animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="2s">
+                        <input class="checkbox" type="checkbox">
                         <div class="policy">I agree to the <a href="#" class="policy__green">Terms & Conditions</a>
                         </div>
                     </div>
-                    <button class="button"><a id="goToMe">Sing Up</a></button>
+                    <button class="button onsubmit animate__animated animate__fadeInUp wow" data-wow-duration="1s"
+                        data-wow-delay="2.2s"><a id="goToMe">Sing
+                            Up</a></button>
                 </form>
+
             </div>
         </div>
     </div>
@@ -95,6 +118,11 @@
         </div>
     </footer> -->
 
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
