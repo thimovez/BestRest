@@ -129,3 +129,18 @@ select {
     top: 100px;
 }
 
+.country__arrow {
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg) translateY(-50%);
+    transform-origin: right;
+    &:focus {
+        transform: rotate(225deg);
+    }
+  }
+

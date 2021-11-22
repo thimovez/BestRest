@@ -43,34 +43,22 @@
                         <span class="msg__secname">The name must be more than 2 characters</span>
                     </div>
                     <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
-                        data-wow-delay="1s">
-                        <img class="select__icon" src="./img/icon/u_map-marker-alt03.svg" alt="icon">
-                        <select class="auth__select" name="country">
-                            <div class="country__position">
-                                <option class="green" selected="" value="Default">Country</option>
-                            </div>
-                            <li class="country__position">
-                                <option class="select__coutrty" value="AF">Australia</option>
-                            </li>
-                            <li>
-                                <option class="select__coutrty" value="AL">Canada</option>
-                            </li>
-                            <li>
-                                <option class="select__coutrty" value="DZ">India</option>
-                            </li>
-                            <li>
-                                <option class="select__coutrty" value="AS">Russia</option>
-                            </li>
-                            <li>
-                                <option class="select__coutrty" value="AD">USA</option>
-                            </li>
-                        </select>
-                        <span class="msg__country">Fill in the field</span>
-                    </div>
+                    data-wow-delay="1s">
+                    <img class="select__icon" src="./img/icon/u_map-marker-alt03.svg" alt="icon">
+                    <select class="auth__select" name="country">
+                        <div class="country__position">
+                            <option class="green" selected="" value="Default">Country</option>
+                            <div class="auth__arrow"></div>
+                        </div>
+                    </select>
+                    <div class="country__arrow"></div>
+                    <span class="msg__country">Fill in the field</span>
+                </div>
                     <div class="auth__block animate__animated animate__fadeInUp wow" data-wow-duration="1s"
                         data-wow-delay="1.5s">
                         <input class="auth__input auth__phone" type="text" required>
                         <label>Phone</label>
+                        <!-- <div value="">+380</div> -->
                         <img class="auth__icon" src="./img/icon/u_phone-alt04.svg" alt="icon">
                         <span class="msg__phone">Fill in the field</span>
                     </div>
@@ -105,23 +93,11 @@
                         data-wow-delay="2.2s"><a id="goToMe">Sing
                             Up</a></button>
                 </form>
-
             </div>
         </div>
+        <div class="auth__footer">If you have an account. <a>Log In</a></div>
     </div>
-
-
-
-    <!-- <footer>
-        <div class="container">
-            <div class="pseudo-footer">If you have an account. <span>Log In</span></div>
-        </div>
-    </footer> -->
-
-
-
-
-
+    <!-- <script src="../isd_country_code.json"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/script.js"></script>

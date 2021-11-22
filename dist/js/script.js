@@ -29,7 +29,26 @@ const inputName = document.querySelector('.auth__name'),
     messageEmail = document.querySelector('.msg__email'),
     onSubmitForm = document.querySelector('.onsubmit');
 
+//Список стран
+    async function getResponce() {
+        let response = await fetch('https://gist.githubusercontent.com/iamswapnilsonar/0e1868229e98cc27a6d2e3487b44f7fa/raw/10f8979f0b1daa0e0b490137d51fb96736767a09/isd_country_code.json');
+        let content = await response.json();
+        content = content.splice(0, 10);
 
+        let list = document.querySelector('.auth__select');
+        let key;
+        for(key in content) {
+            list.innerHTML += `
+            <div class="country__position">
+                <option class="green" selected="" value="${content[key].code}">${content[key].name}</option>
+            </div>
+            `
+            inputPhone.addEventListener('click', () => {
+                
+            })
+        }
+    }
+    getResponce();
 //Проверка на к-во символов в инпуте First Name
 function verifyInputName() {
     inputName.addEventListener('keyup', function (e) {
