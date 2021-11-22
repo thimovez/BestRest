@@ -201,7 +201,10 @@ function formValidation() {
     let name = document.getElementById("first-name").value.length,
     secName = document.querySelector('.auth__second-name').value.length,
     listCountry = document.querySelector('.auth__select').value,
-    phone = document.querySelector('.auth__phone').value.length;
+    phone = document.querySelector('.auth__phone').value.length,
+    password = document.querySelector('.password').value.length;
+    confPassword = document.querySelector('.confirm-passw').value.length;
+    email = document.querySelector('.email').value.length;
     onSubmitForm.addEventListener('click', () => {
         if (name <= 0) {
             messageName.style.display = 'block';
@@ -222,6 +225,21 @@ function formValidation() {
             messagePhone.style.display = 'block';
         } else {
             messagePhone.style.display = 'none';
+        }
+        if (password <= 0) {
+            messagePassword.style.display = 'block';
+        } else {
+            messagePassword.style.display = 'none';
+        }
+        if (confPassword <= 0) {
+            messageConfirmPassword.style.display = 'block';
+        } else {
+            messageConfirmPassword.style.display = 'none';
+        }
+        if (email <= 0) {
+            messageEmail.style.display = 'block';
+        } else {
+            messageEmail.style.display = 'none';
         }
     });
 }
