@@ -27,7 +27,8 @@ const inputName = document.querySelector('.auth__name'),
     messageConfirmPassword = document.querySelector('.msg__confirm-pasw'),
     inputEmail = document.querySelector('.email'),
     messageEmail = document.querySelector('.msg__email'),
-    onSubmitForm = document.querySelector('.onsubmit');
+    onSubmitForm = document.querySelector('.onsubmit'),
+    checkbox = document.querySelector('.checkbox');
 
 //Список стран
     async function getResponce() {
@@ -48,7 +49,7 @@ const inputName = document.querySelector('.auth__name'),
     getResponce();
 //Проверка на к-во символов в инпуте First Name
 function verifyInputName() {
-    const clickInputName = inputName.addEventListener('keyup', function (e) {
+    inputName.addEventListener('keyup', function (e) {
         let length = this.value.length;
         // Вывести текст под инпутом Name
         let timerName = setInterval(() => {
@@ -57,18 +58,15 @@ function verifyInputName() {
                 if (!length) {
                     messageName.style.display = 'none';
                 }
-                return true;
             } else {
                 messageName.style.display = 'none';
             }
             setTimeout(() => {
                 messageName.style.display = 'none';
             }, 4000);
-            return false;
         });
         setTimeout(() => { clearInterval(timerName); });
     });
-    return clickInputName;
 }
 //Проверка на к-во символов в инпуте Second Name
 function verifyInputSecondName() {
@@ -241,6 +239,13 @@ function formValidation() {
         } else {
             messageEmail.style.display = 'none';
         }
+        return false;
+    });
+}
+//checkbox error
+function checkBoxError() {
+    checkbox.addEventListener(() => {
+        
     });
 }
 

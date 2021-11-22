@@ -1,0 +1,19 @@
+@media (max-width: 556px) {
+  .container {
+      max-width: 330px;
+  }
+  .auth__block {
+    &:nth-child(n) {
+      margin-left: 0;
+    }
+  }
+  .auth__block {
+    margin-left: 0;
+  }
+  .auth__form {
+    display: flex;
+    width: 300px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+  }
+}
