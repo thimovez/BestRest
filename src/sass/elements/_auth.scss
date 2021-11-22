@@ -52,6 +52,8 @@ input {
     border-bottom: 1px solid #ccc;
     &:focus {
         outline: none;
+        border: 1px solid $main-color;
+        transition: 0.3s;
     }
 }
 
