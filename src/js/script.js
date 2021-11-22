@@ -196,13 +196,15 @@ function verifyEmail() {
 }
 // Проверка инпутов при нажатии на Sing Up
 function formValidation() {
-    let name = document.getElementById("first-name").value.length,
+
+    const name = document.getElementById("first-name").value.length,
     secName = document.querySelector('.auth__second-name').value.length,
     listCountry = document.querySelector('.auth__select').value,
     phone = document.querySelector('.auth__phone').value.length,
     password = document.querySelector('.password').value.length;
     confPassword = document.querySelector('.confirm-passw').value.length;
     email = document.querySelector('.email').value.length;
+
     onSubmitForm.addEventListener('click', () => {
         if (name <= 0) {
             messageName.style.display = 'block';
