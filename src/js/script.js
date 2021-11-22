@@ -43,9 +43,6 @@ const inputName = document.querySelector('.auth__name'),
                 <option class="green" selected="" value="${content[key].code}">${content[key].name}</option>
             </div>
             `
-            inputPhone.addEventListener('click', () => {
-                
-            })
         }
     }
     getResponce();
