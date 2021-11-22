@@ -1,19 +1,22 @@
-.auth__footer {
-    position: absolute;
-    top: 90%;
-    text-align: center;
-    font-family: Rubik;
-    font-style: 400;
-    font-weight: 300;
-    color: #E0E0E0;
-    width: 100%;
-    a {
-    cursor: pointer;
-    font-family: Rubik;
-    font-style: 400;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 18px;
-    color: #6CEEC7;
+.footer {
+    position: relative;
+    &__login {
+            position: absolute;
+            bottom: 26px;
+            text-align: center;
+            font-family: Rubik;
+            font-style: 400;
+            font-weight: 300;
+            color: #E0E0E0;
+            width: 100%;
+            a {
+            cursor: pointer;
+            font-family: Rubik;
+            font-style: 400;
+            font-weight: 300;
+            font-size: 15px;
+            line-height: 18px;
+            color: #6CEEC7;
+        }
     }
 }
