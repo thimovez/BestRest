@@ -48,7 +48,7 @@ const inputName = document.querySelector('.auth__name'),
     getResponce();
 //Проверка на к-во символов в инпуте First Name
 function verifyInputName() {
-    inputName.addEventListener('keyup', function (e) {
+    const clickInputName = inputName.addEventListener('keyup', function (e) {
         let length = this.value.length;
         // Вывести текст под инпутом Name
         let timerName = setInterval(() => {
@@ -57,15 +57,18 @@ function verifyInputName() {
                 if (!length) {
                     messageName.style.display = 'none';
                 }
+                return true;
             } else {
                 messageName.style.display = 'none';
             }
             setTimeout(() => {
                 messageName.style.display = 'none';
             }, 4000);
+            return false;
         });
         setTimeout(() => { clearInterval(timerName); });
     });
+    return clickInputName;
 }
 //Проверка на к-во символов в инпуте Second Name
 function verifyInputSecondName() {
@@ -124,9 +127,12 @@ function phoneInput() {
             } else {
                 messagePhone.style.display = 'none';
             }
-        }, 1000);
+            setTimeout(() => {
+                messagePhone.style.display = 'none';
+            }, 4000);
+        });
         // остановить вывод текста
-        setTimeout(() => { clearInterval(timerPhone); messagePhone.style.display = 'none'; }, 4000);
+        setTimeout(() => { clearInterval(timerPhone); });
     });
 }
 //Проверка основного пароля
@@ -192,13 +198,31 @@ function verifyEmail() {
 }
 // Проверка инпутов при нажатии на Sing Up
 function formValidation() {
+    let name = document.getElementById("first-name").value.length,
+    secName = document.querySelector('.auth__second-name').value.length,
+    listCountry = document.querySelector('.auth__select').value,
+    phone = document.querySelector('.auth__phone').value.length;
     onSubmitForm.addEventListener('click', () => {
-        if (verifyInputName() === true) {
-            messageName.style.display = 'none';
-        } else {
+        if (name <= 0) {
             messageName.style.display = 'block';
+            } else {
+                messageName.style.display = 'none';
+            }
+        if (secName <= 0) {
+            messageSecName.style.display = 'block';
+        } else {
+            messageSecName.style.display = 'none';
         }
-        return false;
+        if (listCountry.value === "Default") {
+            messageCountry.style.display = 'block';
+        } else {
+            messageCountry.style.display = 'none';
+        }
+        if (phone <= 0) {
+            messagePhone.style.display = 'block';
+        } else {
+            messagePhone.style.display = 'none';
+        }
     });
 }
 
